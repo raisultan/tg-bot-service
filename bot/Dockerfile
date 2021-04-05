@@ -3,7 +3,7 @@ FROM python:3.9.0-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /bot && apt-get update && apt-get install -y gettext
+RUN mkdir /bot && apt-get update
 WORKDIR /bot
 
 COPY ./pyproject.toml /bot/
