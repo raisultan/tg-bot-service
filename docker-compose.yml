@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-    bot:
+    sender:
         command: sh -c "uvicorn app.main:app --reload --host 0.0.0.0"
         build:
             context: ./sender
@@ -10,3 +10,10 @@ services:
           - 8001:8000
         volumes:
           - ./sender:/sender
+    receiver:
+        command: sh -c "python3 main.py"
+        build:
+            context: ./receiver
+            dockerfile: Dockerfile
+        volumes:
+          - ./receiver:/receiver
