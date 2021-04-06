@@ -8,6 +8,7 @@ authors = ["raisultan <ki.xbozz@gmail.com>"]
 python = "3.9.0"
 Pyrogram = "1.2.6"
 TgCrypto = "1.2.2"
+pydantic = "1.8.1"
 
 [tool.poetry.dev-dependencies]
 
