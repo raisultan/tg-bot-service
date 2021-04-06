@@ -9,6 +9,7 @@ python = "3.9.0"
 Pyrogram = "1.2.6"
 TgCrypto = "1.2.2"
 pydantic = "1.8.1"
+httpx = "0.17.1"
 
 [tool.poetry.dev-dependencies]
 
