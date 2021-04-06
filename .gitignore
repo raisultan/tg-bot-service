@@ -143,3 +143,6 @@ Thumbs.db #thumbnail cache on Windows
 
 # profiling data
 .prof
+
+# custom configs
+config.py*
