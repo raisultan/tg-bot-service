@@ -4,9 +4,9 @@ services:
     bot:
         command: sh -c "uvicorn app.main:app --reload --host 0.0.0.0"
         build:
-            context: ./bot
+            context: ./sender
             dockerfile: Dockerfile
         ports:
           - 8001:8000
         volumes:
-          - ./bot:/bot
+          - ./sender:/sender
