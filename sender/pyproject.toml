@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "tg-bot-service"
+name = "tg-bot-service-sender"
 version = "0.1.0"
 description = ""
 authors = ["raisultan <ki.xbozz@gmail.com>"]
