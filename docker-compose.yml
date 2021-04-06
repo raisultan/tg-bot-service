@@ -10,6 +10,7 @@ services:
           - 8001:8000
         volumes:
           - ./sender:/sender
+        tty: true
     receiver:
         command: sh -c "python3 main.py"
         build:
@@ -17,3 +18,4 @@ services:
             dockerfile: Dockerfile
         volumes:
           - ./receiver:/receiver
+        tty: true
