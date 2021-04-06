@@ -145,5 +145,4 @@ Thumbs.db #thumbnail cache on Windows
 .prof
 
 # custom configs
-config.py*
 tg_session*
