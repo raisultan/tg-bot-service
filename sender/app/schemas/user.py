@@ -2,5 +2,5 @@ from pydantic import BaseModel
 
 
 class SendSpecific(BaseModel):
-    chat_id: str
+    chat_id: int
     text: str
