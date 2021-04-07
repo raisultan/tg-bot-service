@@ -1,1 +1,1 @@
-from .user import PlainMessageSend, DocumentCreate
+from .user import PlainMessageSend, DocumentCreate, DocumentSend
