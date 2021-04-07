@@ -3,7 +3,13 @@ from typing import Optional, NoReturn
 from fastapi import APIRouter, status, UploadFile, File
 
 from app import schemas
-from app.services import document_send, message_send, message_send_multiple, tg_document_create
+from app.services import (
+    document_send,
+    document_send_multiple,
+    message_send,
+    message_send_multiple,
+    tg_document_create,
+)
 
 router = APIRouter()
 
@@ -37,4 +43,11 @@ async def create_document(document: UploadFile = File(...))-> dict[str, str]:
 async def send_document(message: schemas.DocumentSend) -> Optional[NoReturn]:
     # TODO: handle potential exceptions
     await document_send(message)
+    return
+
+
+@router.post('/send_multiple_documents', status_code=status.HTTP_200_OK)
+async def send_multiple_documents(messages: list[schemas.DocumentSend]) -> Optional[NoReturn]:
+    # TODO: handle potential exceptions
+    await document_send_multiple(messages)
     return
