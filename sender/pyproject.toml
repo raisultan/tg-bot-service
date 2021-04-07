@@ -12,6 +12,7 @@ Pyrogram = "1.2.6"
 TgCrypto = "1.2.2"
 httpx = "0.17.1"
 python-multipart = "^0.0.5"
+asyncio = "3.4.3"
 
 [tool.poetry.dev-dependencies]
 
