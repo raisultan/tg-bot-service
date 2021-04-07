@@ -1,17 +1,25 @@
 import io
 from typing import Optional, NoReturn
+
+import asyncio
 from fastapi import UploadFile
 
+from app import schemas
 from app.config import settings
 from .bot import init_bot
 
 
-async def message_send(chat_id: str, text: str) -> Optional[NoReturn]:
+async def message_send(message: schemas.PlainMessageSend) -> Optional[NoReturn]:
     async with init_bot() as bot:
         await bot.send_message(
-            chat_id=chat_id,
-            text=text,
+            chat_id=message.chat_id,
+            text=message.text,
         )
+
+
+async def message_send_multiple(messages: list[schemas.PlainMessageSend]) -> Optional[NoReturn]:
+    async with init_bot() as bot:
+        await asyncio.gather(*[bot.send_message(msg.chat_id, msg.text) for msg in messages])
 
 
 async def tg_document_create(document: UploadFile) -> dict[str, str]:
