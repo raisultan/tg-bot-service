@@ -1,6 +1,6 @@
 from typing import Optional, NoReturn
 
-from .services import init_bot
+from .bot import init_bot
 
 
 async def send_specific(chat_id: str, text: str) -> Optional[NoReturn]:
