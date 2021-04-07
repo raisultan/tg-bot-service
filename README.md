@@ -12,10 +12,11 @@ Basis for fully functional fine-grained bot microservice. Implements:
 ## TODO:
 - [x] project structure
 - [x] fastapi setup
-- [ ] sample receive endpoints
+- [+] sample receive endpoints
 - [x] webhook server
 - [x] sample message handler
+- [ ] generic message send endpoint
 - [ ] driver
-- [ ] Telegram client message send
+- [+] Telegram client message send
 - [ ] logging
 - [ ] elk integration
