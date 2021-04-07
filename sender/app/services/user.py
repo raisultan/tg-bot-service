@@ -43,5 +43,16 @@ async def document_send(message: schemas.DocumentSend) -> Optional[NoReturn]:
                 chat_id=message.chat_id,
                 caption=message.caption,
                 document=message.document_id,
-                file_name=message.file_name,
+        )
+
+
+async def document_send_multiple(messages: list[schemas.DocumentSend]) -> Optional[NoReturn]:
+    async with init_bot() as bot:
+        await asyncio.gather(*[
+                bot.send_document(
+                    chat_id=msg.chat_id,
+                    caption=msg.caption,
+                    document=msg.document_id,
+                ) for msg in messages
+            ]
         )
