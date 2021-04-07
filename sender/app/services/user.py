@@ -5,12 +5,11 @@ import asyncio
 from fastapi import UploadFile
 
 from app import schemas
-from app.config import settings
-from .bot import init_bot
+from app.config import bot_init, settings
 
 
 async def message_send(message: schemas.PlainMessageSend) -> Optional[NoReturn]:
-    async with init_bot() as bot:
+    async with bot_init() as bot:
         await bot.send_message(
             chat_id=message.chat_id,
             text=message.text,
@@ -18,7 +17,7 @@ async def message_send(message: schemas.PlainMessageSend) -> Optional[NoReturn]:
 
 
 async def message_send_multiple(messages: list[schemas.PlainMessageSend]) -> Optional[NoReturn]:
-    async with init_bot() as bot:
+    async with bot_init() as bot:
         await asyncio.gather(*[bot.send_message(msg.chat_id, msg.text) for msg in messages])
 
 
@@ -26,7 +25,7 @@ async def tg_document_create(document: UploadFile) -> dict[str, str]:
     doc_bytes = io.BytesIO(document.file.read())
     doc_bytes.name = document.filename
 
-    async with init_bot() as bot:
+    async with bot_init() as bot:
         msg = await bot.send_document(
                 chat_id=settings.TG_FILES_CHAT_ID,
                 document=doc_bytes,
@@ -38,7 +37,7 @@ async def tg_document_create(document: UploadFile) -> dict[str, str]:
 
 
 async def document_send(message: schemas.DocumentSend) -> Optional[NoReturn]:
-    async with init_bot() as bot:
+    async with bot_init() as bot:
         await bot.send_document(
                 chat_id=message.chat_id,
                 caption=message.caption,
@@ -47,7 +46,7 @@ async def document_send(message: schemas.DocumentSend) -> Optional[NoReturn]:
 
 
 async def document_send_multiple(messages: list[schemas.DocumentSend]) -> Optional[NoReturn]:
-    async with init_bot() as bot:
+    async with bot_init() as bot:
         await asyncio.gather(*[
                 bot.send_document(
                     chat_id=msg.chat_id,
