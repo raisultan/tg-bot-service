@@ -32,6 +32,16 @@ async def tg_document_create(document: UploadFile) -> dict[str, str]:
                 document=doc_bytes,
         )
 
-    # TODO: consider documenting potential exceptions
+    # TODO: consider handling potential exceptions
     doc_id = msg.document.file_id
     return {'document_id': doc_id}
+
+
+async def document_send(message: schemas.DocumentSend) -> Optional[NoReturn]:
+    async with init_bot() as bot:
+        await bot.send_document(
+                chat_id=message.chat_id,
+                caption=message.caption,
+                document=message.document_id,
+                file_name=message.file_name,
+        )
