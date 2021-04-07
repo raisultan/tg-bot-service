@@ -16,4 +16,3 @@ class DocumentSend(BaseModel):
     chat_id: int
     caption: str
     document_id: str
-    file_name: Optional[str] = None
