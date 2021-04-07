@@ -10,13 +10,12 @@ Basis for fully functional fine-grained bot microservice. Implements:
 - docker-compose
 
 ## TODO:
-- [ ] project structure
-- [ ] fastapi setup
+- [x] project structure
+- [x] fastapi setup
 - [ ] sample receive endpoints
-- [ ] webhook server
-- [ ] sample message handler
+- [x] webhook server
+- [x] sample message handler
 - [ ] driver
 - [ ] Telegram client message send
 - [ ] logging
 - [ ] elk integration
-
