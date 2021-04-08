@@ -6,11 +6,11 @@ authors = ["raisultan <ki.xbozz@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "3.9.0"
-aiogram = "2.12.1"
+Telethon = "1.21.1"
 pydantic = "1.8.1"
-ujson = "4.0.2"
-cchardet = "2.1.7"
 httpx = "0.17.1"
+cryptg = "^0.2.post2"
+Pillow = "8.2.0"
 
 [tool.poetry.dev-dependencies]
 

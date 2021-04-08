@@ -8,12 +8,12 @@ authors = ["raisultan <ki.xbozz@gmail.com>"]
 python = "3.9.0"
 uvicorn = "0.12.3"
 fastapi = "0.62.0"
-aiogram = "2.12.1"
+Telethon = "1.21.1"
 httpx = "0.17.1"
 python-multipart = "^0.0.5"
 asyncio = "3.4.3"
-ujson = "4.0.2"
-cchardet = "2.1.7"
+cryptg = "0.2.post2"
+Pillow = "8.2.0"
 
 [tool.poetry.dev-dependencies]
 
