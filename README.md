@@ -17,7 +17,7 @@ Basis for fully functional fine-grained bot microservice. Implements:
 - [x] sample message handler
 - [x] endpoint for sending file to tg servers
 - [x] generic message send endpoint
-- [ ] driver
+- [x] driver
 - [x] Telegram client message send
 - [x] sample conversation
 - [ ] logging
