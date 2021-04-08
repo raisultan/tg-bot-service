@@ -19,3 +19,4 @@ services:
         volumes:
           - ./receiver:/receiver
         tty: true
+        stdin_open: true
