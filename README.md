@@ -22,5 +22,5 @@ Basis for fully functional fine-grained bot microservice. Implements:
 - [ ] logging
 - [ ] elk integration
 
-## ISSUES:
-- [ ] database locked on multiple parallel requests to api, due to multiple instances of pyrogram clients are up
+## MANDATORY FOR READING:
+- https://docs.telethon.dev/en/latest/quick-references/faq.html
