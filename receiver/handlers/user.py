@@ -1,8 +1,8 @@
-from pyrogram import filters
+from telethon import events
 
-from config.bot import bot
+from config import bot
 
 
-@bot.on_message(filters.text & filters.private)
-async def echo(client, message):
-    await message.reply_text(message.text)
+@bot.on(events.NewMessage)
+async def any_msg_handler(event):
+    await event.reply('Hey!')
