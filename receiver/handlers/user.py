@@ -1,11 +1,14 @@
 from telethon import events
 
+from api_driver import GatewayAPIDriver
 from config import bot
 
 
 @bot.on(events.NewMessage(pattern='/familiarize'))
 async def familiarize_conv_handler(event):
-    async with bot.conversation(event.peer_id) as conv:
+    chat_id = event.peer_id
+
+    async with bot.conversation(chat_id) as conv:
         await conv.send_message('Hi! Please tell me your name')
         name = (await conv.get_response()).raw_text
 
@@ -14,3 +17,5 @@ async def familiarize_conv_handler(event):
             name = (await conv.get_response()).raw_text
 
         await conv.send_message('Nice to meet you {}!'.format(name))
+
+    await GatewayAPIDriver.tg_user_create(name, chat_id)
