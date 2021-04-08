@@ -1,1 +1,1 @@
-from .user import any_msg_handler
+from .user import familiarize_conv_handler
