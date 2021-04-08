@@ -8,18 +8,14 @@ authors = ["raisultan <ki.xbozz@gmail.com>"]
 python = "3.9.0"
 uvicorn = "0.12.3"
 fastapi = "0.62.0"
-Pyrogram = "1.2.6"
-TgCrypto = "1.2.2"
+aiogram = "2.12.1"
 httpx = "0.17.1"
 python-multipart = "^0.0.5"
 asyncio = "3.4.3"
+ujson = "4.0.2"
+cchardet = "2.1.7"
 
 [tool.poetry.dev-dependencies]
-
-[tool.isort]
-line_length = 100
-multi_line_output = 3
-reverse_relative = true
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
