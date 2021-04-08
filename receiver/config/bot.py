@@ -1,11 +1,9 @@
-from pyrogram import Client
+from telethon import TelegramClient
 
-from config.settings import settings
+from .settings import settings
 
-
-bot = Client(
-    session_name=settings.TG_SESSION_NAME,
+bot = TelegramClient(
+    session=settings.TG_SESSION_NAME,
     api_id=settings.TG_API_ID,
     api_hash=settings.TG_API_HASH,
-    bot_token=settings.TG_BOT_TOKEN,
-)
+).start(bot_token=settings.TG_BOT_TOKEN)
