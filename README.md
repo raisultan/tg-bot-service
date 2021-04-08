@@ -19,6 +19,7 @@ Basis for fully functional fine-grained bot microservice. Implements:
 - [x] generic message send endpoint
 - [ ] driver
 - [x] Telegram client message send
+- [ ] sample conversation
 - [ ] logging
 - [ ] elk integration
 
