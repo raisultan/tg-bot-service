@@ -31,10 +31,10 @@ Basis for extendable, high-performance Telegram Bot microservice. Implements:
 As it can be understood, this microservice is not "killer-beast" and is not suitable for all use-cases. It is mostly oriented for offload, high-speed interaction with users through Telegram.
 
 Ideal workflow of service is following:
-    1. user sends update to Telegram Bot/Account, which is received by specific event handler of **Receiver**
-    2. event handler processes received data, adjusts it if needed and sends this data to **Other Microservice** through **API Driver**, note that you can implement as many API Drivers as you need to interact with your services.
-    3. **Other Microservice** processes and executes its own business logic and sends result of processing to **API**.
-    4. **API** receives the data from other service and transfers it Telegram through **Sender**, which is Telegram Client provided by Telethon.
+    - user sends update to Telegram Bot/Account, which is received by specific event handler of **Receiver**
+    - event handler processes received data, adjusts it if needed and sends this data to **Other Microservice** through **API Driver**, note that you can implement as many API Drivers as you need to interact with your services.
+    - **Other Microservice** processes and executes its own business logic and sends result of processing to **API**.
+    - **API** receives the data from other service and transfers it Telegram through **Sender**, which is Telegram Client provided by Telethon.
 
 Thus, we have fully autonomous, loosely-coupled microservice.
 
