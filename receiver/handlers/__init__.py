@@ -1,1 +1,1 @@
-from .user import familiarize_conv_handler
+from .conversations import familiarize_conv_handler
