@@ -1,3 +1,5 @@
+import logging
+
 from pydantic import BaseSettings
 
 
@@ -11,6 +13,14 @@ class Settings(BaseSettings):
 
     GW_ROOT_URL: str = 'https://some.host'
     GW_API_KEY: str = 'secret-api-key'
+
+    class GatewayAPIDriverLogger:
+        FILENAME: str = 'coderunner_api_driver.log'
+        MAX_BYTES: int = 5 * (1024 * 1024)
+        BACKUP_COUNT: int = 10
+        FORMATTER: logging.Formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
 
     class Config:
         case_sensitive = True
