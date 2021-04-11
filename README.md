@@ -1,5 +1,5 @@
 # Telegram Bot Microservice
-Basis for extendable, high-performance Telegram Bot microservice. Implements:
+Basis for extendable, high-performance Telegram Bot microservice.
 
 
 ## Tech Stack
